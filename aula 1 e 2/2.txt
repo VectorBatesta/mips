@@ -1,0 +1,19 @@
+%Salve na memória o valor 100, na posição 20 usando como base o registrador $zero. Depois salve 200 na posição 40.   
+
+.data
+.text
+
+main:
+li $t0, 100
+sw $t0, 80($zero)
+li $t0, 200
+sw $t0, 160($zero)
+
+li $v0, 1
+lw $a0, 80($zero)
+syscall
+lw $a0, 160($zero)
+syscall
+
+li $v0, 10
+syscall

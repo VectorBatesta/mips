@@ -1,0 +1,35 @@
+#void main(){
+#      int valor1, valor2,retorno;
+#      scanf("%i",valor1);
+#      scanf("%i",valor2);
+#      retorno = soma(valor1,valor2)
+#      printf(retorno);
+#}
+#
+#int soma(valor1,valor2){
+#              return valor1+valor2;
+#}
+
+.data
+.text
+
+main:
+	li $v0, 5
+	syscall
+	move $t0, $v0
+	
+	li $v0, 5
+	syscall
+	move $t1, $v0
+	
+	jal soma
+	
+	li $v0 1
+	syscall
+	
+	li $v0, 10
+	syscall
+
+soma:
+	add $a0, $t0, $t1
+	jr $ra

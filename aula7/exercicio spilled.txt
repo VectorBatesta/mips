@@ -1,0 +1,55 @@
+#int folha(int g, int h, int I, int j)
+#{   
+#       int f,f2;
+#       f = (g + h) - (I + j);
+#       f2 = folha(1,2,3,4);
+#       f = f+f2;
+#       return f;
+#}
+#
+#int folha2(int g, int h, int I, int j)
+#{   
+#       int f;
+#       f = (g - h) + (I - j);
+#       return f;
+#}
+#
+#void main(){
+#    int res = folha(1,2,3,4);
+#    printf("O resultado de folha é %i \n\n", res);
+#}
+
+.data
+.text
+
+main:
+	addi $sp, $sp, -16
+	li $t0 1
+	sw $t0 4($sp)
+	li $t0 2
+	
+	li $t2 3
+	li $t3 4
+	
+	jal folha
+	
+	li $v0, 1
+	syscall
+	
+	li $v0, 10
+	syscall
+
+folha:
+#       int s0,s1;
+#       s0 = (g + h) - (I + j);
+#       s1 = folha(1,2,3,4);
+#       s0 = f+f2;
+#       return f;
+	
+	
+	
+	jr $ra
+	
+folha2:
+	
+	jr $ra
